@@ -1,0 +1,70 @@
+@charset "ISO-8859-1";
+#header{
+	background:darkgrey;
+	height:"300px";
+	width:"1350px" ;
+	height:"200px";
+}
+#header a:link{
+	font-size:larger;
+	 color:black;
+}
+
+#header a:hover{
+	font-size:larger;
+	 color:red;
+}
+
+headermenu{
+	display:table;
+	}
+
+#headermenu a:link{
+	font-size:larger;
+}
+
+a:link{
+	 color:blue;
+	 text-decoration: none;
+}
+a:visited{
+	color:red;
+}
+a:hover{
+	color:red;
+	text-decoration:none;
+}
+a:active{
+	color:red;
+}
+.menu_item{
+	display:table-cell;
+	 padding-right: 20px;
+}
+.pageheading{
+	color:darkblue;
+}
+#background {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+#centered a:link{
+	 color:white;
+}
+#centered a:hover{
+	 color:red;
+}
+.centered {
+	  position: absolute;
+	  bottom: 8px;
+      right: 10px;
+	  border:3px solid black;
+	  border-radius: 30px;
+      font-size: 20px;
+  
+}
+.footer{
+	background:darkgrey;
+	color: black;
+}
