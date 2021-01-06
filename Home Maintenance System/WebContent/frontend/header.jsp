@@ -25,7 +25,7 @@
                <a href="call">CONTACT US</a>&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
    <div id="background"  class="background" align="justify" >
-         <img src="images/header.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1350px" height="400px"/>
+         <img src="images/header.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
     <div id="centered"class="centered">
           <a href="Servicemen" >know about our maintenance servicemen</a>
           </div>
