@@ -13,8 +13,8 @@
 
 <div align="center">
          <h2>Content</h2>
+    
 </div>
 <jsp:directive.include file="footer.jsp"/>
-
 </body>
 </html>
