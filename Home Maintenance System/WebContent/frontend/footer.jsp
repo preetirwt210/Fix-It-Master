@@ -1,5 +1,6 @@
- <div align="center" class="container"><h1 class="top-left">Our Office</h1>
-	   <h3 class="top-left2" align="center">XXXXX-xx-xxxx<br/>Gurgaon,Haryana <br/><br/>support@maintenance.in<br/><br/></h3>
+ <div align="center" class="container" style="background-color:lightgrey";>
+       <h1 class="top-left">Our Office</h1>
+	   <h3 class="top-left1" align="center">XXXXX-XX-XXX-XX<br/>&nbsp;Gurgaon,Haryana<br/><br/></h3>
 	   <h1 class="center">Our Offering</h1><h3 id="center2" align="center"><a href="Book Handymen for Home">Book Handymen for Home</a></h3>
 	   <h1 class="quick">Quick Links</h1>
 	   <h3 id="link" align="center"><a href="All_services">All Services</a><br/> </h3>
@@ -14,6 +15,7 @@
 	    <div id="headermenu">
 	   <h3 id="followus" align="center"><a href="https://www.facebook.com/"><img src="images/fb.png" width="30px" height="20px"></a></h3>
 	   <h3 id="followus1" align="center"><a href="https://twitter.com/preetirwt210"><img src="images/Tw.png" width="30px" height="20px"></a></h3>
-	   <h3 id="followus2" align="center"><a href="https://www.linkedin.com/in/preeti-rawat-a94484185"><img src="images/in.png" width="30px" height="20px"></a></h3></div>	
+	   <h3 id="followus2" align="center"><a href="https://www.linkedin.com/in/preeti-rawat-a94484185"><img src="images/in.png" width="30px" height="20px"></a></h3><br/>
+	   <h3 id="followus3">support@maintenance.in</h3></div>	
     <h5 align="center" class="footer">CopyRights(c)2021-2025. All Rights Reserved</h5>	
 	 </div> 

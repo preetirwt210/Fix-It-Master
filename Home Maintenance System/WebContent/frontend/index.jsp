@@ -7,13 +7,17 @@
 <title>Home Page</title>
 <link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
+<body >
 
 <jsp:directive.include file="header.jsp"/>
 
 <div align="center">
-         <h2>Content</h2>
-    
+         <h1>Corporate Service PortFolio</h1><br/>
+         All services
+         <h1>Customers Reviews</h1>
+         what our customer says..
+         <h1>Contact us</h1>
+           form
 </div>
 <jsp:directive.include file="footer.jsp"/>
 </body>
