@@ -12,11 +12,11 @@
 <jsp:directive.include file="header.jsp"/>
 
 <div align="center">
-         <h1>Corporate Service PortFolio</h1><br/>
+         <h1 align="center">Corporate Service PortFolio</h1><br/>
          All services
-         <h1>Customers Reviews</h1>
+         <h1 align="center">Customers Reviews</h1>
          what our customer says..
-         <h1>Contact us</h1>
+         <h1 align="center">Contact us</h1>
            form
 </div>
 <jsp:directive.include file="footer.jsp"/>

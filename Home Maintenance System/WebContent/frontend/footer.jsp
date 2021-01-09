@@ -1,4 +1,4 @@
- <div align="center" class="container" style="background-color:lightgrey";>
+ <div align="center" class="container" style="background-color:lightgrey" >
        <h1 class="top-left">Our Office</h1>
 	   <h3 class="top-left1" align="center">XXXXX-XX-XXX-XX<br/>&nbsp;Gurgaon,Haryana<br/><br/></h3>
 	   <h1 class="center">Our Offering</h1><h3 id="center2" align="center"><a href="Book Handymen for Home">Book Handymen for Home</a></h3>
@@ -10,7 +10,6 @@
 	   <h3 id="link4" align="center"><a href="All_services">Contact Us</a></h3><br/>
 	   <h3 id="link5" align="center"><a href="All_services">Terms and Conditions</a> </h3><br/>
 	   <h3 id="link6" align="center"><a href="All_services">Team</a></h3><br/><br/><br/><br/>
-	   
 	    <h1 class="follow">Follow Us On</h1>
 	    <div id="headermenu">
 	   <h3 id="followus" align="center"><a href="https://www.facebook.com/"><img src="images/fb.png" width="30px" height="20px"></a></h3>

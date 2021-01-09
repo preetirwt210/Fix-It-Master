@@ -99,6 +99,9 @@ a:active{
 	  padding-left: 20px;
 	  padding-right: 20px;
 }
+#center2 a:hover{
+	 color:red;
+}
 .quick{
 	position: absolute;
 	bottom:1;
@@ -116,6 +119,9 @@ a:active{
 	  padding-left: 20px;
 	  padding-right: 20px;
 }
+#link a:hover{
+	 color:red;
+}
 #link1 a:link{
 	position: absolute;
 	top:950px;
@@ -123,6 +129,9 @@ a:active{
 	  color: black;
 	  padding-left: 20px;
 	  padding-right: 20px;
+}
+#link1 a:hover{
+	 color:red;
 }
 #link2 a:link{
 	position: absolute;
@@ -132,6 +141,9 @@ a:active{
 	  padding-left: 20px;
 	  padding-right: 20px;
 }
+#link2 a:hover{
+	 color:red;
+}
 #link3 a:link{
 	position: absolute;
 	top:1010px;
@@ -139,6 +151,9 @@ a:active{
 	  color: black;
 	  padding-left: 20px;
 	  padding-right: 20px;
+}
+#link3 a:hover{
+	 color:red;
 }
 #link4 a:link{
 	position: absolute;
@@ -148,6 +163,9 @@ a:active{
 	  padding-left: 20px;
 	  padding-right: 20px;
 }
+#link4 a:hover{
+	 color:red;
+}
 #link5 a:link{
 	position: absolute;
 	top:1070px;
@@ -156,6 +174,9 @@ a:active{
 	  padding-left: 20px;
 	  padding-right: 20px;
 }
+#link5 a:hover{
+	 color:red;
+}
 #link6 a:link{
 	position: absolute;
 	top:1100px;
@@ -163,6 +184,9 @@ a:active{
 	  color: black;
 	  padding-left: 20px;
 	  padding-right: 20px;
+}
+#link6 a:hover{
+	 color:red;
 }
 .follow{
 	position: absolute;
@@ -181,6 +205,9 @@ a:active{
 	
 	  color: black;
 }
+#followus a:hover{
+	 color:red;
+}
 #followus1 a:link{
 	position: absolute;
 	top:920px;
@@ -188,6 +215,9 @@ a:active{
 	display:table-cell;
 	 padding-right: 20px;
 	  color: black;
+}
+#followus1 a:hover{
+	 color:red;
 }
 #followus2 a:link{
 	position: absolute;
@@ -197,12 +227,18 @@ a:active{
 	 padding-right: 20px;
 	  color: black;
 }
+#followus2 a:hover{
+	 color:red;
+}
 #followus3 {
 	position: absolute;
 	top:930px;
 	left:1050px;
 	 padding-right: 20px;
 	  color: black;
+}
+#followus3 a:hover{
+	 color:red;
 }
 .footer{
 	background: black;
