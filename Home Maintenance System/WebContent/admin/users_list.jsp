@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,16 +19,19 @@
 	      <th>Id</th>
 	      <th>FullName</th>
 	      <th>Email</th>
+	      <th>Password</th>
 	      <th>Action</th>
 	   </tr>
+	   <c:forEach var="tempUser" items="${List_User}" varStatus="status" >
 	   <tr>
-	      <td>nhhh</td>
-	      <td>hhh</td>
-	      <td></td>
-	      <td></td>
+	      <td>${status.index +1}</td>
+	      <td>${tempUser.id}</td>
+	      <td>${tempUser.fullName}</td>
+	      <td>${tempUser.email}</td>
+	      <td>${tempUser.password}</td>
 	      <td></td>
 	   </tr>
-  
+  </c:forEach>
    </table>
 </div>
 <jsp:directive.include file="footer.jsp"/>

@@ -3,8 +3,8 @@
   <Resource name="jdbc/home_maintenance" 
   			auth="Container" type="javax.sql.DataSource"
                maxActive="20" maxIdle="5" maxWait="10000"
-               username="webstudent" password="webstudent" 
+               username="root" password="rawatpreeti210" 
                driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/web_student_tracker?useSSL=false"/>
+               url="jdbc:mysql://localhost:3306/home_maintenance?useSSL=false"/>
 
 </Context>
