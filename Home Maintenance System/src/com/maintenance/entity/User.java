@@ -1,4 +1,4 @@
-package com.maintenance.admin.user;
+package com.maintenance.entity;
 
 public class User {
 	

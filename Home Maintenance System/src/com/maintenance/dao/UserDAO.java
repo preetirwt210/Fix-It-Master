@@ -1,14 +1,15 @@
-package com.maintenance.admin.user;
+package com.maintenance.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.ServletException;
 import javax.sql.DataSource;
+
+import com.maintenance.entity.User;
 
 public class UserDAO {
 
@@ -18,6 +19,8 @@ public class UserDAO {
 		dataSource=theDataSource;
 	}
 	
+	
+
 	public List<User> listUsers() throws Exception{
 		List<User> listUsers=new ArrayList<>();
 		
@@ -35,12 +38,12 @@ public class UserDAO {
 			myRs=myStmt.executeQuery(sql);
 			
 			while(myRs.next()) {
-				int id=myRs.getInt("user_id");
+				int userId=myRs.getInt("user_id");
 				String fullName=myRs.getString("full_name");
 				String email=myRs.getString("email");
 				String password=myRs.getString("password");
 				
-				User tempUser=new User(id,fullName,email,password);
+				User tempUser=new User(userId,fullName,email,password);
 				
 				listUsers.add(tempUser);
 			}
@@ -70,5 +73,33 @@ public class UserDAO {
 			e.printStackTrace();
 	     }
 	
+	}
+
+	public void createUser(User newUsers) throws Exception {
+		Connection myConn=null;
+		PreparedStatement stmt=null;
+		
+		try {
+			myConn=dataSource.getConnection();
+			String sql="insert into users"
+			+ "(full_name,email,password)"
+				+	"values(?,?,?)";
+			
+			stmt=myConn.prepareStatement(sql);
+			
+			stmt.setString(1,newUsers.getFullName());
+			stmt.setString(2,newUsers.getEmail());
+			stmt.setString(3,newUsers.getPassword());
+			
+			stmt.execute();
+			
+			
+		}
+		finally {
+			close(myConn,stmt,null);
+		}
+		
+		
+		
 	}
 }

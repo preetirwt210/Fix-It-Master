@@ -12,28 +12,24 @@
 
 <div align="center">
    <h1>Users Management</h1>
-   <a href="new_user">Create New User</a><br/><br/>
+   <a href="create_user_form.jsp">Create New User</a><br/><br/>
    <table border="1">
 	   <tr>
 	      <th>Index</th>
-	      <th>Id</th>
 	      <th>FullName</th>
 	      <th>Email</th>
-	      <th>Password</th>
 	      <th>Action</th>
 	   </tr>
 	   <c:forEach var="tempUser" items="${List_User}" varStatus="status" >
 	   <tr>
 	      <td>${status.index +1}</td>
-	      <td>${tempUser.id}</td>
 	      <td>${tempUser.fullName}</td>
 	      <td>${tempUser.email}</td>
-	      <td>${tempUser.password}</td>
 	      <td></td>
 	   </tr>
-  </c:forEach>
+       </c:forEach>
    </table>
-</div>
+    </div>
 <jsp:directive.include file="footer.jsp"/>
 </body>
 </html>

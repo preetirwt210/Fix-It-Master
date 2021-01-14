@@ -22,10 +22,6 @@
           <div class="menu_item" > 
                <a href="call">Bookings</a>&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
-          
-   <div id="background"  class="background" align="justify" >
-         <img src="../images/header.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="300px"/>
-  </div>
  
   </div>
       </div>
