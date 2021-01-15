@@ -16,6 +16,7 @@
    <table border="1">
 	   <tr>
 	      <th>Index</th>
+	      <th>Id</th>
 	      <th>FullName</th>
 	      <th>Email</th>
 	      <th>Action</th>
@@ -23,9 +24,11 @@
 	   <c:forEach var="tempUser" items="${List_User}" varStatus="status" >
 	   <tr>
 	      <td>${status.index +1}</td>
+	      <td>${tempUser.userId }</td>
 	      <td>${tempUser.fullName}</td>
 	      <td>${tempUser.email}</td>
-	      <td></td>
+	      <td><a href="edit_user?userId=${tempUser.userId}">Update</a>|
+	      <a href="">Delete</a></td>
 	   </tr>
        </c:forEach>
    </table>

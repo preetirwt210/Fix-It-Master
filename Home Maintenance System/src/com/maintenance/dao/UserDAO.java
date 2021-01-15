@@ -3,6 +3,7 @@ package com.maintenance.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,14 +93,73 @@ public class UserDAO {
 			stmt.setString(3,newUsers.getPassword());
 			
 			stmt.execute();
-			
+		
 			
 		}
 		finally {
 			close(myConn,stmt,null);
 		}
 		
+	}
+
+	public User editUser(String userId) throws Exception {
 		
+		User user=null;
+		Connection myConn=null;
+		PreparedStatement stmt=null;
+		ResultSet rs=null;
+		int theUserId;
+		
+		try {
+			theUserId=Integer.parseInt(userId);
+			myConn=dataSource.getConnection();
+			String sql="Select * from users where user_id=?";
+			
+			stmt=myConn.prepareStatement(sql);
+			stmt.setInt(1,theUserId);
+			rs=stmt.executeQuery();
+			if(rs.next()) {
+				String fullName=rs.getString("full_name");
+				String email=rs.getString("email");
+				String password=rs.getString("password");
+				
+				user=new User(theUserId,fullName,email,password);
+			}
+			else {
+				throw new Exception("Could not find UserId: " + theUserId);
+			}
+			return user;
+		}
+		
+		finally {
+			close(myConn,stmt,rs);
+		}
+		
+	}
+
+	public void updateUser(User users) throws Exception {
+		Connection myConn=null;
+		PreparedStatement stmt=null;
+		
+		try {
+			myConn=dataSource.getConnection();
+			String sql="update users " 
+			         +"SET full_name=?, email=?, password=? "
+					+ "where user_id =?";
+			
+			stmt=myConn.prepareStatement(sql);
+			
+			stmt.setString(1,users.getFullName());
+			stmt.setString(2,users.getEmail());
+			stmt.setString(3,users.getPassword());
+			stmt.setInt(4,users.getUserId());
+			
+			stmt.execute();
+			
+		}
+		finally {
+			close(myConn,stmt,null);
+		}
 		
 	}
 }
