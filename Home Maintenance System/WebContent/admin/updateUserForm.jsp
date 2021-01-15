@@ -15,7 +15,7 @@
         <h1>Edit User</h1></div>
    <div align="center">
    <form id="formLogin" action="update_user" method="post">
-   <input type="hidden" name="userId" value="${the_User.userId}"/>
+   <input type="hidden" name="userId" value="${theUser.userId}"/>
    <table>
       <tbody>
           <tr>

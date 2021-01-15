@@ -28,7 +28,7 @@
 	      <td>${tempUser.fullName}</td>
 	      <td>${tempUser.email}</td>
 	      <td><a href="edit_user?userId=${tempUser.userId}">Update</a>|
-	      <a href="">Delete</a></td>
+	      <a href="delete_user" onclick="if(!(confirm('Are You sure .You want to delete this userId: ' + ${tempUser.userId}))) return false">Delete</a></td>
 	   </tr>
        </c:forEach>
    </table>

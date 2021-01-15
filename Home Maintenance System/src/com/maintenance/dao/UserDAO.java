@@ -162,4 +162,23 @@ public class UserDAO {
 		}
 		
 	}
+
+	public void deleteUser(int userId) throws Exception{
+		Connection myConn=null;
+		PreparedStatement stmt=null;
+		try {
+			
+			myConn=dataSource.getConnection();
+			String sql="delete from users where user_id=?";
+			stmt=myConn.prepareStatement(sql);
+			
+			stmt.setInt(1,userId);
+			
+			stmt.execute();
+		}
+		finally {
+			close(myConn,stmt,null);
+		}
+		
+	}
 }

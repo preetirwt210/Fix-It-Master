@@ -56,7 +56,7 @@ public class UpdateUserServlet extends HttpServlet {
 	private void updateUser(HttpServletRequest request, HttpServletResponse response) 
 			throws Exception {
 		
-		int userId=Integer.parseInt(request.getParameter("userId"));	
+	    int userId=Integer.parseInt(request.getParameter("userId"));
 		String fullName=request.getParameter("fullName");
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
