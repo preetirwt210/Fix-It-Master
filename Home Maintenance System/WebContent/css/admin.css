@@ -1,0 +1,25 @@
+@charset "ISO-8859-1";
+a:link{
+	color:blue;
+	font-size:larger;
+	text-decoration:none;
+}
+a:active{
+	color:blue;
+}
+a:hover{
+	color:red;
+}
+
+#headermenu a:link{
+	display:table;
+}
+.menu_item{
+	display:table-cell;
+    padding-right: 50px;
+	 
+}
+#footer{
+	color:black;
+	font-size:20px;
+}

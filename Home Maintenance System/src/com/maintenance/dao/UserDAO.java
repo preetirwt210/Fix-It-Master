@@ -181,4 +181,58 @@ public class UserDAO {
 		}
 		
 	}
+
+
+
+	public List<User> searchUsers(String searchUser) throws Exception {
+      List<User> users = new ArrayList<>();
+        
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+        int userId;
+        
+        try {
+            
+            myConn = dataSource.getConnection();
+            
+            if (searchUser != null && searchUser.trim().length() > 0) {
+                
+                String sql = "select * from users where lower(full_name) like ? ";
+              
+                myStmt = myConn.prepareStatement(sql);
+               
+                String theSearchNameLike = "%" + searchUser.toLowerCase() + "%";
+                myStmt.setString(1, theSearchNameLike);
+                
+            } else {
+               
+                String sql = "select * from users order by full_name";
+                
+                myStmt = myConn.prepareStatement(sql);
+            }
+            myRs = myStmt.executeQuery();
+            
+            while (myRs.next()) {
+                
+                int id = myRs.getInt("user_id");
+                String fullName = myRs.getString("full_name");
+                String email = myRs.getString("email");
+                String password = myRs.getString("password");
+                
+                User tempUser = new User(id, fullName, email, password);
+                users.add(tempUser);            
+            }
+            
+            return users;
+        }
+        finally {
+            close(myConn, myStmt, myRs);	
+            }
+		
+
+	}
+
+
+
 }

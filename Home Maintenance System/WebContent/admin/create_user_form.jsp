@@ -4,32 +4,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>User form</title>
-<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="../css/admin.css">
+<link type="text/css" rel="stylesheet" href="../css/form.css">
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.min.js"></script>
 </head>
 <body>
    <jsp:directive.include file="header.jsp"/>
+   <hr>
    
    <div align="center">
         <h1>Users Management</h1></div>
    <div align="center">
-   <form id="formLogin" action="create_user" method="post">
+   <form id="userForm" action="create_user" method="post">
    <table>
       <tbody>
           <tr>
-	          <td><label>FullName :</label></td>
-	          <td><input type="text" name="fullName" />
+	          <td align="right"><label>FullName :</label></td>
+	          <td align="left"><input type="text" name="fullName" id="fullName" />
           </tr>
           <tr>
-	          <td><label>Email:</label></td>
-	          <td><input type="text" name="email" />
+	          <td align="right"><label>Email:</label></td>
+	          <td align="left"><input type="text" name="email"  id="email"/>
           </tr>
           <tr>
-	          <td><label>Password:</label></td>
-	          <td><input type="password" name="password""/>
+	          <td align="right"><label>Password:</label></td>
+	          <td align="left"><input type="password" name="password" id="password"/>
           </tr>
           <tr>
-	          <td><input type="submit" value="Save"/></td> 
-			  <td><input type="submit" value="Cancel"/></td>
+	          <td align="right"><input type="submit" value="Create" class="save"/></td> 
+			  <td align="left"><input type="submit" value="Cancel" onclick="javascript:history.go(-1);" class="cancel"/></td>
 		     </tr>
 		      
       </tbody>
@@ -39,10 +43,36 @@
    
    
    </div>
-   <a href="list_users">Back To List</a>
+   <div style="clear:both;"></div>
+   <p >
+   <a href="list_users" >Back To List</a>
+   </p>
   
-  
+  <br/><br/><br/><br/><hr>
     <jsp:directive.include file="footer.jsp"/>
    
 </body>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	 $("#userForm").validate({
+    rules:{
+    	 email:{
+    		   required:true,
+    		   email:true
+    	 },
+    	 fullName:"required",
+    	 password:"required",
+    },
+    messages:{
+    	email:{
+    		required:"Please enter email",
+    		email:"Please enter valid email address"
+    	},
+    	fullName:"Please enter fullName",
+    	password:"Please enter password"
+    }
+	 });
+   });
+</script>
 </html>

@@ -1,6 +1,7 @@
 package com.maintenance.controller.admin.user;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,44 +13,38 @@ import com.maintenance.admin.BaseServlet;
 import com.maintenance.entity.User;
 
 
-@WebServlet("/admin/edit_user")
-public class EditUserServlet extends BaseServlet {
+@WebServlet("/admin/search_user")
+public class SearchUserServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
-	
-	
-	public EditUserServlet() {
+       
+   
+    public SearchUserServlet() {
         super();
     }
 
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		
 		try {
-		editUser(request,response);
-
+			searchUser(request,response);
 		}
-		catch(Exception e){
+		catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+
+	private void searchUser(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		
+		String searchUser=request.getParameter("searchUser");
+		 List<User> users = userDao.searchUsers(searchUser);
+	       
+	        request.setAttribute("List_User",users);
+	                
+	        RequestDispatcher dispatcher=request.getRequestDispatcher("users_list.jsp");
+			dispatcher.forward(request, response);
 		
 	}
 
-	private void editUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		String userId=request.getParameter("userId");
-		User user=userDao.editUser(userId);
-		
-		request.setAttribute("theUser",user);
-		
-		String editPage="updateUserForm.jsp";
-		RequestDispatcher dispatcher=request.getRequestDispatcher(editPage);
-		dispatcher.forward(request, response);
-		
-		
-		
-		
-	}
-
-	
 }

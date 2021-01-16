@@ -5,18 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home Maintenance System</title>
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
 </head>
 <body >
         
 <jsp:directive.include file="header.jsp"/> 
-
+<hr>
 <div align="center">
-    <h1 class="pageheading"> Administrative Dashboard</h1>
+    <h1> Administrative Dashboard</h1>
     </div>
     <hr width="60%">
-    <div id= "headermenu" align="center">
-         <h2 class="pageheading">Quick Actions:</h2>
+    <div  align="center">
+         <h2>Quick Actions:</h2>
          <b>
          <a href="create_book">New Service</a> &nbsp;
          <a href="user_form.jsp">New User</a> &nbsp;
@@ -26,20 +26,20 @@
     </div>
     <hr width="60%">
     <div align="center">
-    <h2 class="pageheading">Recent Sales: </h2>
+    <h2>Recent Sales: </h2>
     </div>
     
     <hr width="60%">
     <div align="center">
-    <h2 class="pageheading">Recent Reviews: </h2>
+    <h2>Recent Reviews: </h2>
     </div>
     
     <hr width="60%">
     <div align="center">
-    <h2 class="pageheading">Stastics: </h2>
+    <h2>Stastics: </h2>
     </div>
-    <hr>
     
+     <br/><br/><br/><br/><hr>   
     <jsp:directive.include file="footer.jsp"/>
 </body>
 </html>

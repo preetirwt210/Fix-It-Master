@@ -11,39 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import com.maintenance.admin.BaseServlet;
 import com.maintenance.dao.UserDAO;
 import com.maintenance.entity.User;
 
 
 @WebServlet("/admin/update_user")
-public class UpdateUserServlet extends HttpServlet {
+public class UpdateUserServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
-       
-   private UserDAO userDao;
-   
-   @Resource(name="jdbc/home_maintenance")
-   private DataSource dataSource;
-   
-   @Override
-	public void init() throws ServletException {
-		super.init();
-		try {
-		userDao=new UserDAO(dataSource);
-		}
-		catch(Exception e) {
-			throw new ServletException(e);
-		}
-		}
-
-    public UpdateUserServlet() {
+   public UpdateUserServlet() {
         super();
     }
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doPost(request, response);
-	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -63,8 +42,7 @@ public class UpdateUserServlet extends HttpServlet {
 		
         User users=new User(userId,fullName,email,password);
 		userDao.updateUser(users);
-		RequestDispatcher dispatcher =request.getRequestDispatcher("list_users");
-		dispatcher.forward(request, response);
+		response.sendRedirect(request.getContextPath() + "/admin/list_users");
 		
 	}
 
