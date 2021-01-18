@@ -46,5 +46,11 @@ label {
 	width: 60px; 
 	text-align:10px;
 }
+.error{
+	font-style: italic;
+	color:red;
+	margin:5px;
+	
+}
 
 	

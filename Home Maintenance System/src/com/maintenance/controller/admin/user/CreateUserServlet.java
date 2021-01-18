@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import com.maintenance.admin.BaseServlet;
 import com.maintenance.entity.User;
 
@@ -16,24 +15,20 @@ import com.maintenance.entity.User;
 public class CreateUserServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 	
-	
     public CreateUserServlet() {
-        super();
-        
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
 		try {
-			createUsers(request,response);
+			createUsers(request, response);
 			}
 			catch(Exception e) {
 				throw new ServletException(e);
 			}
 	}
 
-	private void createUsers(HttpServletRequest request, HttpServletResponse response) 
+	public void createUsers(HttpServletRequest request, HttpServletResponse response) 
 			throws Exception {
 		
 		String fullName=request.getParameter("fullName");
@@ -44,10 +39,14 @@ public class CreateUserServlet extends BaseServlet {
 		User newUsers=new User(fullName,email,password);
 		userDao.createUser(newUsers);
 		
-		response.sendRedirect(request.getContextPath() + "/admin/list_users");
+		String message = "User has been updated successfully!!";
+		request.setAttribute("message", message);
+		response.sendRedirect(request.getContextPath() + "/admin/list_users" );
 		
 		
 	}
+
+	
 
 
 }

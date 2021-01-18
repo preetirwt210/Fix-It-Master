@@ -20,8 +20,6 @@ public class UserDAO {
 		dataSource=theDataSource;
 	}
 	
-	
-
 	public List<User> listUsers() throws Exception{
 		List<User> listUsers=new ArrayList<>();
 		

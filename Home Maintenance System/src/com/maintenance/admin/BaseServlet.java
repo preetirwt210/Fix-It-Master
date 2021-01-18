@@ -16,16 +16,20 @@ import com.maintenance.dao.UserDAO;
 public abstract class BaseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	 protected UserDAO userDao;
-	    
+	 protected HttpServletRequest request;
+		protected HttpServletResponse response;
+		
+		
 	    @Resource(name="jdbc/home_maintenance")
 	    protected DataSource dataSource;
 	    
-		@Override
 		public void init() throws ServletException {
 			
 			super.init();
 			try {
+				
 				userDao=new UserDAO(dataSource);
+				
 			}
 			catch(Exception e) {
 				throw new ServletException(e);

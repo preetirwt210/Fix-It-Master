@@ -59,7 +59,11 @@
     rules:{
     	 email:{
     		   required:true,
-    		   email:true
+    		   email:true,
+    		   remote: {
+                   url: "check-username.jsp",
+                   type: "post"
+               }
     	 },
     	 fullName:"required",
     	 password:"required",
@@ -67,7 +71,8 @@
     messages:{
     	email:{
     		required:"Please enter email",
-    		email:"Please enter valid email address"
+    		email:"Please enter valid email address",
+    			remote: "Email already in use!"
     	},
     	fullName:"Please enter fullName",
     	password:"Please enter password"

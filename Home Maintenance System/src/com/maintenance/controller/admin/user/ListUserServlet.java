@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 import com.maintenance.admin.BaseServlet;
 import com.maintenance.entity.User;
@@ -22,18 +23,24 @@ public class ListUserServlet extends BaseServlet {
 		try {
 			listUsers(request,response);
 		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+			e.printStackTrace();}
 	}
 
+
+	public void listUsers(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		this.request=request;
+		this.response=response;
+		listUsers(null);
+	}
 	
-	private void listUsers(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void listUsers(String message) throws Exception {
 		
 		List<User> listUsers=userDao.listUsers();
 		
 		request.setAttribute("List_User", listUsers);
-		
+		if(message!= null) {
+			request.setAttribute("message", message);
+			}
 		RequestDispatcher dispatcher=request.getRequestDispatcher("users_list.jsp");
 		dispatcher.forward(request, response);
 		

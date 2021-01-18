@@ -13,12 +13,18 @@
 <hr>
 <div align="center">
    <h1>Users Management</h1><br/><br/>
+   <c:if test="${message!=null }">
+			   <div align="center">
+			      <h4 class="message">${message }</h4>
+			   </div>
+			   </c:if>
    <a class="create_user" href="create_user_form.jsp">Create New User</a><br/><br/><br/>
    <form action="search_user" method="get">
 	   <label>Search User</label> 
 	   <input type="text" name="searchUser"/> 
 	   <input type="submit" name="searchUser" value="Search" class="search_user"/><br/>
 	  </form>
+	  
    <table border="1">
 	   <tr>
 	      <th>Index</th>
