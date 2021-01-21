@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,9 +15,6 @@ import com.maintenance.dao.UserDAO;
 public abstract class BaseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	 protected UserDAO userDao;
-	 protected HttpServletRequest request;
-		protected HttpServletResponse response;
-		
 		
 	    @Resource(name="jdbc/home_maintenance")
 	    protected DataSource dataSource;

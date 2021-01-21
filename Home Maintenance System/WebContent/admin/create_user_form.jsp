@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,11 +13,13 @@
 <body>
    <jsp:directive.include file="header.jsp"/>
    <hr>
-   
+	
    <div align="center">
         <h1>Users Management</h1></div>
    <div align="center">
+   <c:if test="${users == null }">
    <form id="userForm" action="create_user" method="post">
+   </c:if>
    <table>
       <tbody>
           <tr>
@@ -33,7 +36,7 @@
           </tr>
           <tr>
 	          <td align="right"><input type="submit" value="Create" class="save"/></td> 
-			  <td align="left"><input type="submit" value="Cancel" onclick="javascript:history.go(-1);" class="cancel"/></td>
+			  <td align="left"><input type="button" value="Cancel" onclick="javascript:history.go(-1);" class="cancel"/></td>
 		     </tr>
 		      
       </tbody>
@@ -60,19 +63,15 @@
     	 email:{
     		   required:true,
     		   email:true,
-    		   remote: {
-                   url: "check-username.jsp",
-                   type: "post"
-               }
     	 },
     	 fullName:"required",
-    	 password:"required",
+    	 password:"required"
     },
     messages:{
     	email:{
     		required:"Please enter email",
     		email:"Please enter valid email address",
-    			remote: "Email already in use!"
+    			
     	},
     	fullName:"Please enter fullName",
     	password:"Please enter password"

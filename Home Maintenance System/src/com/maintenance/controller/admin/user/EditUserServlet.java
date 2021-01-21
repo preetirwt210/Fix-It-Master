@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
+import com.maintenance.adminDBUtil.UserDbUtil;
 import com.maintenance.entity.User;
 
 
@@ -25,31 +26,16 @@ public class EditUserServlet extends BaseServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
-		try {
-		editUser(request,response);
-
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+		UserDbUtil userDbUtil=new UserDbUtil(dataSource,request,response);
 		
+			try {
+				userDbUtil.editUser();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 	}
 
-	private void editUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		
-		String userId=request.getParameter("userId");
-		User user=userDao.editUser(userId);
-		
-		request.setAttribute("theUser",user);
-		
-		String editPage="updateUserForm.jsp";
-		RequestDispatcher dispatcher=request.getRequestDispatcher(editPage);
-		dispatcher.forward(request, response);
-		
-		
-		
-		
-	}
-
+	
 	
 }

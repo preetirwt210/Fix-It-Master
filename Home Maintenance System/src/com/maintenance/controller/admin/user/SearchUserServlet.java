@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
+import com.maintenance.adminDBUtil.UserDbUtil;
 import com.maintenance.entity.User;
 
 
@@ -25,8 +26,9 @@ public class SearchUserServlet extends BaseServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		UserDbUtil userDbUtil=new UserDbUtil(dataSource,request,response);
 		try {
-			searchUser(request,response);
+			userDbUtil.searchUser();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -34,17 +36,5 @@ public class SearchUserServlet extends BaseServlet {
 	}
 
 
-	private void searchUser(HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		
-		String searchUser=request.getParameter("searchUser");
-		 List<User> users = userDao.searchUsers(searchUser);
-	       
-	        request.setAttribute("List_User",users);
-	                
-	        RequestDispatcher dispatcher=request.getRequestDispatcher("users_list.jsp");
-			dispatcher.forward(request, response);
-		
-	}
-
+	
 }

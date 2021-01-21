@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
+import com.maintenance.adminDBUtil.UserDbUtil;
 
 
 @WebServlet("/admin/delete_user")
@@ -21,22 +22,14 @@ public class DeleteUserServlet extends BaseServlet {
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	           try {
-	        	   deleteUser(request,response);
+		UserDbUtil userDbUtil=new UserDbUtil(dataSource,request,response);       
+		try {
+			userDbUtil.deleteUser();
 	           }catch(Exception e) {
 	        	   e.printStackTrace();
 	           }
 	}
-	private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		int userId=Integer.parseInt(request.getParameter("userId"));
-		
-		userDao.deleteUser(userId);
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("list_users");
-		dispatcher.forward(request, response);
-		
-	}
-
+	
 	
 	
 }

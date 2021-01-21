@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import com.maintenance.admin.BaseServlet;
+import com.maintenance.adminDBUtil.UserDbUtil;
 import com.maintenance.dao.UserDAO;
 import com.maintenance.entity.User;
 
@@ -25,25 +26,14 @@ public class UpdateUserServlet extends BaseServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		UserDbUtil userDbUtil=new UserDbUtil(dataSource,request,response);
 		try {
-		updateUser(request,response);
+			userDbUtil.updateUser();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	private void updateUser(HttpServletRequest request, HttpServletResponse response) 
-			throws Exception {
-		
-	    int userId=Integer.parseInt(request.getParameter("userId"));
-		String fullName=request.getParameter("fullName");
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		
-        User users=new User(userId,fullName,email,password);
-		userDao.updateUser(users);
-		response.sendRedirect(request.getContextPath() + "/admin/list_users");
-		
-	}
+	
 
 }

@@ -37,7 +37,7 @@
           </tr>
           <tr>
 	          <td align="right"><input type="submit" value="Save" class="save"/></td> 
-			  <td align="left"><input type="submit" value="Cancel" class="cancel"/></td>
+			  <td align="left"><input type="button" value="Cancel" class="cancel"/></td>
 		     </tr>
       </tbody>
    </table>
