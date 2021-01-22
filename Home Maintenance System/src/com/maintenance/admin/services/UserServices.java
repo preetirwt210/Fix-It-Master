@@ -1,5 +1,6 @@
-package com.maintenance.adminDBUtil;
+package com.maintenance.admin.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,14 +11,14 @@ import javax.sql.DataSource;
 import com.maintenance.dao.UserDAO;
 import com.maintenance.entity.User;
 
-public class UserDbUtil{
+public class UserServices{
 
 	 private UserDAO userDao;
 	 private HttpServletRequest request;
 	 private HttpServletResponse response;
 	  private DataSource dataSource;
 	    
-	  public UserDbUtil(DataSource dataSource,HttpServletRequest request,HttpServletResponse response) {
+	  public UserServices(DataSource dataSource,HttpServletRequest request,HttpServletResponse response) {
 			
 			this.request=request;
 			this.response=response;
@@ -104,6 +105,19 @@ public class UserDbUtil{
 	                
 	        RequestDispatcher dispatcher=request.getRequestDispatcher("users_list.jsp");
 			dispatcher.forward(request, response);
+		
+	}
+
+	public void login() throws SQLException {
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		
+		boolean loginResult=userDao.checkLogin(email,password);
+		if(loginResult) {
+			System.out.println("User is authenticated");
+		}else {
+			System.out.println("Login failed");
+		}
 		
 	}
 

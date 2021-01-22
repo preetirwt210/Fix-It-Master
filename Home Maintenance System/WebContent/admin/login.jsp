@@ -12,7 +12,7 @@
 	</head>
 	<body> 
 	<div align="center">
-		<h1 class="pageheading">Book Store Administration</h1>
+		<h1 class="pageheading">Home Maintenance System</h1>
 		<h2>Admin Login</h2>
 					<c:if test="${message!=null }">
 			   <div align="center">
