@@ -1,9 +1,11 @@
 package com.maintenance.admin.services;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
@@ -108,15 +110,23 @@ public class UserServices{
 		
 	}
 
-	public void login() throws SQLException {
+	public void login() throws SQLException, ServletException, IOException {
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		
-		boolean loginResult=userDao.checkLogin(email,password);
-		if(loginResult) {
+		User users=userDao.checkLogin(email,password);
+		if(users!=null) {
 			System.out.println("User is authenticated");
+			request.getSession().setAttribute("useremail", email);
+			 RequestDispatcher dispatcher=request.getRequestDispatcher("/admin/");
+				dispatcher.forward(request, response);
 		}else {
 			System.out.println("Login failed");
+            String message="Login failed!";
+			
+			request.setAttribute("message", message);
+			 RequestDispatcher dispatcher=request.getRequestDispatcher("/admin/login.jsp");
+		      dispatcher.forward(request, response);
 		}
 		
 	}

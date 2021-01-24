@@ -10,7 +10,7 @@
             <img src="images/logo.jpg" alt="logo" width="300" height="80"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
               <div class="menu_item"> 
-            <a href="home">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="${pageContext.request.contextPath }">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
              <div class="menu_item"> 
              <a href="book">BOOK HOME SERVICES</a>&nbsp;&nbsp;&nbsp;&nbsp;

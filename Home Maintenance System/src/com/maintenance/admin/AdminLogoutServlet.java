@@ -8,28 +8,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/admin/")
-public class AdminServlet extends BaseServlet {
+@WebServlet("/admin/logout")
+public class AdminLogoutServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public AdminServlet() {
+    public AdminLogoutServlet() {
         super();
     }
 
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		doGet(req, resp);
-	}
-
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String homepage="index.jsp";
-		System.out.println("AdminServlet");
-		RequestDispatcher dispatcher= request.getRequestDispatcher(homepage);
+		String message="Successfully Logged out!!";
+		request.getSession().removeAttribute("useremail");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("login.jsp");
+		request.setAttribute("message", message);
 		dispatcher.forward(request, response);
+		
 	}
+
 
 }

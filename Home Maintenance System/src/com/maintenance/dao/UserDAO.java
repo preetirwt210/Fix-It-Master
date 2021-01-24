@@ -229,25 +229,25 @@ public class UserDAO {
             }
 	}
 
-public boolean checkLogin(String email, String password) throws SQLException {
-		 List<User> users = new ArrayList<>();
+public User checkLogin(String email, String password) throws SQLException {
+	User users=null;
 	        Connection myConn = null;
 	        PreparedStatement myStmt = null;
 	        ResultSet myRs = null;
-	        int userId;
 	        
 	        try {
 	            myConn = dataSource.getConnection();
-	                String sql = "Select * from users WHERE email=? AND password=? ";
+	                String sql = "SELECT * FROM users WHERE email=? AND password=? ";
 	                myStmt = myConn.prepareStatement(sql);
 	                myStmt.setString(1,email);
 	                myStmt.setString(2,password);
 	                myRs=myStmt.executeQuery();
+	                
+	                if(myRs.next()) {
+	                	users=new User();
+	    			}
 	    			
-	                if(users.size()==1) {
-	                	return true;
-	                }
-	                return false;
+	                return users;
 	        }
 	        finally {
 	            close(myConn, myStmt, myRs);	

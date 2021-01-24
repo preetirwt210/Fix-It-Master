@@ -2,7 +2,9 @@
 
        <div id="headermenu" align="center" > 
              <div class="menu_item" align="left" >
+          <a href="${pageContext.request.contextPath }/admin/">
             <img src="../images/admin.jpg" alt="logo" width="300" height="80" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a>
             </div>
               <div class="menu_item">
            <a href="list_users"><b>Users</b></a>
