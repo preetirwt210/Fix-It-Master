@@ -14,19 +14,18 @@ import com.maintenance.admin.services.UserServices;
 
 @WebServlet("/admin/list_users")
 public class ListUserServlet extends BaseServlet {
-	private static final long serialVersionUID = 1L;
-	 @Resource(name="jdbc/home_maintenance")
-	    protected DataSource dataSource;
-	    
+	private static final long serialVersionUID = 1L; 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		UserServices userDbUtil=new UserServices(dataSource,request,response);
-		try {
-			userDbUtil.listUsers();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		UserServices services=new UserServices(dataSource,request,response);
+		
+			try {
+				services.listUsers();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
 
 	}
 

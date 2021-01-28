@@ -17,7 +17,7 @@ tr {
 	border-top:1px solid gray;
 	text-align:center;	
 }
-.create_user {
+.create_user,.create_category,.create_services,.create_customer,.create_review{
 	border: 1px solid #666; 
 	border-radius: 5px; 
 	padding: 10px; 
@@ -29,7 +29,7 @@ tr {
 	background: #cccccc;
 	color:black;
 }
-.search_user {
+.search_user,.search_category,.search_services,.search_customer {
 	border: 1px solid #666; 
 	border-radius: 5px; 
 	padding: 10px; 

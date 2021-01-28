@@ -7,24 +7,25 @@
 	<title>Admin Login</title>
 	
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/form.css">
 	<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
 	   <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
 	</head>
 	<body> 
 	<div align="center">
-		<h1 class="pageheading">Home Maintenance System</h1>
-		<h2>Admin Login</h2>
+		<h1 class="pageheading">Home Maintenance System</h1><br/><br/><br/><br/><br/><br/>
+		<h2 align="center">Admin Login</h2>
 					<c:if test="${message!=null }">
 			   <div align="center">
 			      <h4 class="message">${message }</h4>
 			   </div>
-			   </c:if>
+			   </c:if><br/>
 	
 	<form id="formLogin" action="login" method="post">
 	   <table class="form" > 
 	   <tr>
 	       <td align="right">Email:</td>
-	       <td align="left"><input type="text" name="email" id="email" size="20"></td> 
+	       <td align="left"><input type="text" name="email" id="email" size="20"><br/><br/></td> 
 	  </tr>
 		   <tr>
 	       <td align="right">Password:</td>

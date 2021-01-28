@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Edit form</title>
+<title>Edit Category form</title>
 <link type="text/css" rel="stylesheet" href="../css/admin.css">
 <link type="text/css" rel="stylesheet" href="../css/form.css">
 <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
@@ -16,25 +16,17 @@
    <hr>
    
    <div align="center">
-        <h1>Edit User</h1></div>
+        <h1>Edit Category</h1></div>
    <div align="center">
-   <form id="updateForm" action="update_user" method="post">
-   <input type="hidden" name="userId" value="${theUser.userId}"/>
+   <form id="updateForm" action="update_category" method="post">
+   <input type="hidden" name="categoryId" value="${category.categoryId}"/>
    <table>
       <tbody>
           <tr>
-	          <td align="right"><label>FullName :</label></td>
-	          <td align="left"><input type="text" name="fullName" id="fullName" value="${theUser.fullName}" />
+	          <td align="right"><label>Name :</label></td>
+	          <td align="left"><input type="text" name="name" id="name" value="${category.name}" />
           </tr>
           
-          <tr>
-	          <td align="right"><label>Email:</label></td>
-	          <td align="left"><input type="text" name="email" id="email" value="${theUser.email}"/>
-          </tr>
-          <tr>
-	          <td align="right"><label>Password:</label></td>
-	          <td align="left"><input type="password" name="password" id="password" value="${theUser.password}"/>
-          </tr>
           <tr>
 	          <td align="right"><input type="submit" value="Save" class="save"/></td> 
 			  <td align="left"><input type="button" value="Cancel" onclick="javascript:history.go(-1);" class="cancel"/></td>
@@ -45,7 +37,7 @@
    
    <br/><br/>
    </div>
-   <a href="list_users">Back To List</a>
+   <a href="list_category">Back To List</a>
   
    <br/><br/><br/><br/><br/><br/><hr>
     <jsp:directive.include file="footer.jsp"/>
@@ -56,20 +48,10 @@
    $(document).ready(function(){
 	 $("#updateForm").validate({
     rules:{
-    	 email:{
-    		   required:true,
-    		   email:true
-    	 },
-    	 fullName:"required",
-    	 password:"required",
+    	 name:"required",
     },
     messages:{
-    	email:{
-    		required:"Please enter email",
-    		email:"Please enter valid email address"
-    	},
-    	fullName:"Please enter fullName",
-    	password:"Please enter password"
+    	name:"Please enter Category Name"
     }
 	 });
    });

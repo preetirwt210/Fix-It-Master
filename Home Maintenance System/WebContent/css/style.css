@@ -65,182 +65,47 @@ a:active{
 	  border-radius: 30px;
       font-size: 20px;
 }
-.top-left{
-	position: absolute;
-	bottom:1;
-	left: 20px;
-     background:black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.top-left1{
-	position: absolute;
-	top:900px;
-	left:5px;
-	color: black;
-	 padding-left: 20px;
-	  padding-right: 20px;
-}
-.center{
-	position: absolute;
-	bottom:1;
-	left:350px;
-	background:black;
-	  color: white;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#center2 a:link{
-	 position: absolute;
-	top:920px;
-	left:327px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#center2 a:hover{
-	 color:red;
-}
-.quick{
-	position: absolute;
-	bottom:1;
-	left:700px;
-	background:black;
-	  color: white;
-	  padding-left: 20px;
-	  padding-right: 20px;	
-}
-#link a:link{
-	position: absolute;
-	top:920px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link a:hover{
-	 color:red;
-}
-#link1 a:link{
-	position: absolute;
-	top:950px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link1 a:hover{
-	 color:red;
-}
-#link2 a:link{
-	position: absolute;
-	top:980px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link2 a:hover{
-	 color:red;
-}
-#link3 a:link{
-	position: absolute;
-	top:1010px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link3 a:hover{
-	 color:red;
-}
-#link4 a:link{
-	position: absolute;
-	top:1040px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link4 a:hover{
-	 color:red;
-}
-#link5 a:link{
-	position: absolute;
-	top:1070px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link5 a:hover{
-	 color:red;
-}
-#link6 a:link{
-	position: absolute;
-	top:1100px;
-	left:730px;
-	  color: black;
-	  padding-left: 20px;
-	  padding-right: 20px;
-}
-#link6 a:hover{
-	 color:red;
-}
-.follow{
-	position: absolute;
-	top:845px;
-	left:1050px;
-	background:black;
-	  color: white;
-	  padding-left: 20px;
-	  padding-right: 20px;	
-}
 
-#followus a:link{
-	position: absolute;
-	top:920px;
-	left:1090px;
-	
-	  color: black;
-}
-#followus a:hover{
-	 color:red;
-}
-#followus1 a:link{
-	position: absolute;
-	top:920px;
-	left:1130px;
-	display:table-cell;
-	 padding-right: 20px;
-	  color: black;
-}
-#followus1 a:hover{
-	 color:red;
-}
-#followus2 a:link{
-	position: absolute;
-	top:920px;
-	left:1170px;
-	display:table-cell;
-	 padding-right: 20px;
-	  color: black;
-}
-#followus2 a:hover{
-	 color:red;
-}
-#followus3 {
-	position: absolute;
-	top:930px;
-	left:1050px;
-	 padding-right: 20px;
-	  color: black;
-}
-#followus3 a:hover{
-	 color:red;
-}
-.footer{
-	background: black;
-	color:white;
-}
+*{padding:0;margin:0;box-sizing: border-box;}
+/* body{font-family: 'Lato', sans-serif;} */
+body{font-family: 'Roboto', sans-serif;}
+p {color:#868383;font-size:16px;margin:0 0 15px;line-height: 22px;}
+.container {width: 1170px;margin:0 auto;}
+.sectionTitle{font-size: 35px;font-weight: 800;margin: 0 0 10px;text-transform: uppercase;}
+.sectionSubTitle{color: #868383; font-size: 16px; margin: 0 0 15px;line-height: 24px;}
+.top_header{background:black;width:100%;float:left;text-align:right;position: relative;z-index: 99; padding: 5px 0;}
+.top_header p{margin:0 0px;}
+.top_header p a{color:#fff;font-size:13px;margin:0 10px;text-decoration:none;}
+.top_header p a:hover{text-decoration:underline;}
+.top_header p a .fa{color:#fff;}
+
+
+
+
+.footer{background:#000;width:100%;float:left;padding:70px 0 40px 0;border-top:4px solid #ed3237;}
+.footer_col1{width:25%;float:left;}
+.footer_col2{width:25%;float:left;padding:0 15px 0 0;}
+.footer_col_txt{width:100%;float:left;color:#b4b3b3;}
+.footer_col_txt ul{}
+.footer_col_txt ul li{list-style:none;width:100%;float:left;margin:0 0 20px 0;}
+.footer_col_txt ul li a{color:#b4b3b3;text-decoration:none;font-size:15px;display:block;}
+.footer_col_txt ul li a:hover{color:#ffffff;}
+.corpOfficeHead{color:#fff;margin:20px 0 15px;font-size:20px;}
+.footer_col_txt .corpOffice{width:100%;float:left;}
+.footer_col_txt .corpOffice li{width:100%;float:left;color:#b4b3b3;}
+.footer_col_txt .corpOffice li a{color:#b4b3b3;}
+.footer_col_txt .corpOffice li .fa{color:#fff;    margin: 0 10px 0 0;}
+.footerHead{font-size:20px;position:relative;padding:0 0 10px;margin:20px 0 25px;color:#fff;}
+.footerHead::before{content:'';width:40px;height:2px;background:#ed3237;top:38px;left:0;position:absolute;}
+.footer_copyrights{background:#1c1c1c;width:100%;float:left;text-align:center;padding:15px 0;}
+.footer_copyrights p{color:#7d7d7d;font-size:13px;margin:0;}
+.footer_col_txt .footerapps{width:100%;float:left;margin: 0 0 30px;}
+.footer_col_txt .footerapps li{width:50%;float:left;}
+.footer_col_txt .footerSocialDiv{width:100%;float:left;}
+.footer_col_txt .footerSocialDiv li{width:20%;float:left;}
+.footer_col_txt .footerSocialDiv li a{text-align:center;width:35px;height:35px;display:block; position:relative;padding:0 0 10px; font-size:18px;border-radius:100%;color: #fff;}
+.footer_col_txt .footerSocialDiv li.facebook a{background: #3b5998;}
+.footer_col_txt .footerSocialDiv li.twitter a{background: #26a6d1;}
+.footer_col_txt .footerSocialDiv li.linkedin a{background: #0e76a8;}
+.footer_col_txt .footerSocialDiv li.youtube a{background: #c4302b;}
+.footer_col_txt .footerSocialDiv li.instagram a{background: #3f729b;}

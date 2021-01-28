@@ -10,10 +10,10 @@
            <a href="list_users"><b>Users</b></a>
             </div>
              <div class="menu_item"> 
-             <a href="book"><b>Categories</b></a>
+             <a href="list_category"><b>Categories</b></a>
              </div>
               <div class="menu_item"> 
-              <a href="explore"><b>Services</b></a>
+              <a href="list_services"><b>Services</b></a>
               </div>
                <div class="menu_item" > 
                <a href="abt"><b>Customers</b></a>
