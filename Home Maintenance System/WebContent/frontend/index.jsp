@@ -10,7 +10,13 @@
 <body >
 
 <jsp:directive.include file="header.jsp"/>
-
+<div>
+         <img id="background"  class="background"  src="images/header.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
+         <img id="background"  class="background"  src="images/header1.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
+          <img id="background"  class="background"  src="images/header2.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
+         
+</div>
+  
 <div align="center">
          <h1 align="center">Corporate Service PortFolio</h1><br/>
          All services
@@ -26,4 +32,22 @@
 </div>
 <jsp:directive.include file="footer.jsp"/>
 </body>
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("background");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
 </html>

@@ -11,6 +11,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import com.maintenance.entity.Category;
+import com.maintenance.entity.User;
 
 public class CategoryDAO {
 
@@ -140,8 +141,68 @@ private DataSource dataSource;
 		
 	}
 
-	public void deleteCategory(Integer categoryId) {
+	public void deleteCategory(Integer categoryId) throws SQLException {
+		Connection myConn=null;
+		PreparedStatement stmt=null;
+		try {
+			myConn=dataSource.getConnection();
+			String sql="delete from category where category_id=?";
+			stmt=myConn.prepareStatement(sql);
+			stmt.setInt(1,categoryId);
+			stmt.execute();
+		}
+		
+		finally {
+			close(myConn,stmt,null);
+		}
 		
 		
+	}
+
+	public List<Category> searchCategory(String searchCategory) throws SQLException {
+List<Category> category = new ArrayList<>();
+        
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+        int categoryId;
+        
+        try {
+            
+            myConn = dataSource.getConnection();
+            
+            if (searchCategory != null && searchCategory.trim().length() > 0) {
+                
+                String sql = "select * from category where lower(name) like ? ";
+              
+                myStmt = myConn.prepareStatement(sql);
+               
+                String theSearchNameLike = "%" + searchCategory.toLowerCase() + "%";
+                myStmt.setString(1, theSearchNameLike);
+                
+            } else {
+               
+                String sql = "select * from category order by name";
+                
+                myStmt = myConn.prepareStatement(sql);
+            }
+            myRs = myStmt.executeQuery();
+            
+            while (myRs.next()) {
+                
+                int id = myRs.getInt("category_id");
+                String name = myRs.getString("name");
+                
+                
+                Category tempCategory = new Category(id, name);
+                category.add(tempCategory);            
+            }
+            
+            return category;
+        }
+        finally {
+            close(myConn, myStmt, myRs);	
+            }
+
 	}
 }

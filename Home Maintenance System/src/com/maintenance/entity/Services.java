@@ -30,7 +30,7 @@ public class Services implements java.io.Serializable {
 
 	public Services(Integer serviceId, Category category, String title, String description, byte[] image,
 			String base64Image, float price, Date lastUpdateTime, Set<Review> reviews,
-			Set<BookingDetail> bookingDetails) {
+			Set<BookingDetail> bookingDetails,String categoryName) {
 		super();
 		this.serviceId = serviceId;
 		this.category = category;

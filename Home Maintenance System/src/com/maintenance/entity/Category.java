@@ -13,17 +13,12 @@ public class Category implements java.io.Serializable {
 	public Category() {
 		
 	}
-	
 
 
 	public Category(Integer categoryId, String name) {
-		super();
 		this.categoryId = categoryId;
 		this.name = name;
-		this.services = services;
 	}
-
-
 
 	public Category(String name) {
 		this.name = name;
@@ -57,6 +52,7 @@ public class Category implements java.io.Serializable {
 	public void setServices(Set<Services> services) {
 		this.services = services;
 	}
+
 
 	
 

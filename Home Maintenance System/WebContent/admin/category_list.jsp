@@ -34,6 +34,7 @@
 	      <th>Action</th>
 	   </tr>
 	   <c:forEach var="tempCategory" items="${list_Category}" varStatus="status" >
+	   
 	   <tr>
 	      <td>${status.index +1}</td>
 	      <td>${tempCategory.categoryId }</td>

@@ -23,9 +23,9 @@ public class SearchUserServlet extends BaseServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		UserServices userDbUtil=new UserServices(dataSource,request,response);
+		UserServices services=new UserServices(dataSource,request,response);
 		try {
-			userDbUtil.searchUser();
+			services.searchUser();
 		}
 		catch(Exception e) {
 			e.printStackTrace();

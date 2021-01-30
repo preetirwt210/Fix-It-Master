@@ -1,6 +1,7 @@
 package com.maintenance.admin.services;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.sql.DataSource;
 
 import com.maintenance.dao.CategoryDAO;
 import com.maintenance.entity.Category;
+import com.maintenance.entity.User;
 
 public class CategoryServices {
 	 private CategoryDAO categoryDao;
@@ -77,12 +79,23 @@ public class CategoryServices {
 		
 	}
 
-	public void deleteCategory() throws ServletException, IOException {
+	public void deleteCategory() throws Exception {
 		Integer categoryId=Integer.parseInt(request.getParameter("categoryId"));
 		
 		categoryDao.deleteCategory(categoryId);
-		RequestDispatcher dispatcher=request.getRequestDispatcher("/list_category");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("/admin/list_category");
 		dispatcher.forward(request, response);
+		
+	}
+
+	public void searchCategory() throws Exception {
+		String searchCategory=request.getParameter("searchCategory");
+		 List<Category> category = categoryDao.searchCategory(searchCategory);
+	       
+	        request.setAttribute("list_Category",category);
+	                
+	        RequestDispatcher dispatcher=request.getRequestDispatcher("category_list.jsp");
+			dispatcher.forward(request, response);
 		
 	}
 
