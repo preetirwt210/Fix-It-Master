@@ -24,9 +24,16 @@
       <tbody>
           <tr>
 	          <td align="right"><label>Category Name :</label></td>
-	          <td align="left"><input type="text" name="categoryName" id="categoryName" />
+	          <td align="left"><input type="text" name="name" id="name" />
           </tr>
-          
+           <tr>
+	          <td align="right"><label>Image :</label></td>
+              <td align="left"><input type="file" name="image" id="image" size="20" /><br/>
+                 <img id="thumbnail" alt="image-preview"  style="width:20%; margin-top:10px"
+                 src="data:imagejpg;base64,${category.image }"/> 
+                   
+                </td>    
+          </tr>
           <tr>
 	          <td align="right"><input type="submit" value="Create" class="save"/></td> 
 			  <td align="left"><input type="button" value="Cancel" onclick="javascript:history.go(-1);" class="cancel"/></td>
@@ -53,14 +60,26 @@
    $(document).ready(function(){
 	 $("#categoryForm").validate({
     rules:{
-    	categoryName:"required"
+    	name:"required",
+    	image:"required",
     	 
     },
     messages:{
     	
-    	categoryName:"Please enter Category Name"
+    	name:"Please enter Category Name",
+    	 image:"Please Enter Image of the Image"
     }
 	 });
    });
+   function showImageThumbnail(fileInput){
+		  var file=fileInput.files[0];
+		  
+		  var reader= new FileReader();
+		  
+		  reader.onload=function(e){
+			  $("#thumbnail").attr("src",e.target.result);
+		  };
+		  reader.readAsDataURL(file);
+	  }
 </script>
 </html>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import com.maintenance.admin.BaseServlet;
-import com.maintenance.admin.services.UserServices;
+import com.maintenance.services.UserServices;
 
 @WebServlet("/admin/list_users")
 public class ListUserServlet extends BaseServlet {

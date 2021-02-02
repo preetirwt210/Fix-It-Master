@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
-import com.maintenance.admin.services.ServicesServ;
+import com.maintenance.services.ServicesServ;
 
 @WebServlet("/admin/list_services")
 public class ListServicesServlet extends BaseServlet {

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
-import com.maintenance.admin.services.CategoryServices;
+import com.maintenance.services.CategoryServices;
 
 @WebServlet("/admin/search_category")
 public class SearchCategoryServlet extends BaseServlet {

@@ -31,6 +31,7 @@
 	      <th>Index</th>
 	      <th>Id</th>
 	      <th>Name</th>
+	      <th>Image</th>
 	      <th>Action</th>
 	   </tr>
 	   <c:forEach var="tempCategory" items="${list_Category}" varStatus="status" >
@@ -39,6 +40,7 @@
 	      <td>${status.index +1}</td>
 	      <td>${tempCategory.categoryId }</td>
 	      <td>${tempCategory.name}</td>
+	      <td><img src="data:image/jpg;base64,${tempCategory.base64Image}" width="240" height="300"/></td>
 	      <td><a href="edit_category?categoryId=${tempCategory.categoryId}">Update</a>|
 	      <a href="delete_category?categoryId=${tempCategory.categoryId}" onclick="if(!(confirm('Are You sure .You want to delete this categoryId: ' + ${tempCategory.categoryId}))) return false">Delete</a></td>
 	   </tr>

@@ -146,14 +146,7 @@ public class Services implements java.io.Serializable {
 		this.bookingDetails = bookingDetails;
 	}
 
-	@Override
-	public String toString() {
-		return "Services [serviceId=" + serviceId + ", category=" + category + ", title=" + title + ", description="
-				+ description + ", image=" + Arrays.toString(image) + ", base64Image=" + base64Image + ", price="
-				+ price + ", lastUpdateTime=" + lastUpdateTime + ", reviews=" + reviews + ", bookingDetails="
-				+ bookingDetails + "]";
-	}
-
+	
 	
 	
 	}

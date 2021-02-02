@@ -23,7 +23,7 @@ private DataSource dataSource;
 
 	public List<Services> listServices() throws SQLException {
 		List<Services> services=new ArrayList<>();
-		List<Category> categories=new ArrayList<>();
+	
 		
 		Connection myConn=null;
 		Statement stmt=null;
@@ -34,7 +34,9 @@ private DataSource dataSource;
 		try {
 			
 			myConn=dataSource.getConnection();
-			String sql="select * from service ";
+			String sql="select * "
+					+ "from service "
+					+ "INNER JOIN category ON service.category_id=category.category_id ";
 			stmt=myConn.createStatement();
 		
 			rs=stmt.executeQuery(sql);
@@ -46,12 +48,12 @@ private DataSource dataSource;
 				String description=rs.getString("description");
 				float price=rs.getFloat("price");
 				
+				
 				service.setServiceId(serviceId);
 				service.setTitle(title);
 				service.setDescription(description);
 				service.setPrice(price);
-				
-	
+	            
 				
 				services.add(service);
 			}

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
-import com.maintenance.admin.services.ServicesServ;
+import com.maintenance.services.ServicesServ;
 
 
 @WebServlet("/admin/create_service")

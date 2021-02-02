@@ -8,6 +8,8 @@ public class Category implements java.io.Serializable {
 
 	private Integer categoryId;
 	private String name;
+	private String base64Image;
+	 
 	private Set<Services> services = new HashSet<Services>(0);
 
 	public Category() {
@@ -24,10 +26,23 @@ public class Category implements java.io.Serializable {
 		this.name = name;
 	}
 
+	
+
+
 	public Category(String name, Set<Services> services) {
 		this.name = name;
 		this.services = services;
 	}
+
+	public String getBase64Image() {
+		return base64Image;
+	}
+
+
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+
 
 	public Integer getCategoryId() {
 		return categoryId;

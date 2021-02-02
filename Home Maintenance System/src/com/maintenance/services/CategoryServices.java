@@ -1,4 +1,4 @@
-package com.maintenance.admin.services;
+package com.maintenance.services;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -46,10 +46,15 @@ public class CategoryServices {
 	}
 
 	public void createCategory() throws Exception {
-		String categoryName=request.getParameter("categoryName");
-		Category category=new Category(categoryName);
+		String categoryName=request.getParameter("name");
+		String image=request.getParameter("image");
+		
+		Category category=new Category();
+		category.setName(categoryName);
+		category.setBase64Image(image);
 		categoryDao.createCategory(category);
 		
+		request.setAttribute("category",category );
 		
 		String message="Category Successfully Added";
 		listCategory(message);
@@ -58,6 +63,7 @@ public class CategoryServices {
 
 	public void editCategory() throws Exception {
 		Integer categoryId=Integer.parseInt(request.getParameter("categoryId"));
+		
 		Category category=categoryDao.editCategory(categoryId);
 		System.out.println(categoryId);
 		request.setAttribute("category", category);
@@ -71,6 +77,7 @@ public class CategoryServices {
 	public void updateCategory() throws Exception {
 		Integer categoryId=Integer.parseInt(request.getParameter("categoryId"));
 		String name=request.getParameter("name");
+		
 		
 		Category category=new Category(categoryId,name);
 		categoryDao.updateCategory(category);

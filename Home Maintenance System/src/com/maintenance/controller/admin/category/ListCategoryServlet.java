@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import com.maintenance.admin.BaseServlet;
-import com.maintenance.admin.services.CategoryServices;
+import com.maintenance.services.CategoryServices;
 
 @WebServlet("/admin/list_category")
 public class ListCategoryServlet extends BaseServlet {

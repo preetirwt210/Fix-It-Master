@@ -1,17 +1,22 @@
 package com.maintenance.dao;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import com.maintenance.entity.Category;
-import com.maintenance.entity.User;
+
 
 public class CategoryDAO {
 
@@ -21,7 +26,7 @@ private DataSource dataSource;
 		dataSource=theDataSource;
 	}
 
-	public List<Category> listCategories() throws SQLException {
+	public List<Category> listCategories() throws SQLException, IOException {
 		List<Category> categories=new ArrayList<>();
 		
 		Connection myConn=null;
@@ -37,8 +42,29 @@ private DataSource dataSource;
 			while(myRs.next()) {
 				int categoryid=myRs.getInt("category_id");
 				String  categoryName=myRs.getString("name");
+				Blob blob = myRs.getBlob("image");
+                
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                 
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);                  
+                }
+                 
+                byte[] imageBytes = outputStream.toByteArray();
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                 
+                inputStream.close();
+                outputStream.close();
+                 
 				
-				Category cat=new Category(categoryid,categoryName);
+				
+				Category cat=new Category();
+				cat.setCategoryId(categoryid);
+				cat.setName(categoryName);
+				cat.setBase64Image(base64Image);
 				categories.add(cat);
 			}
 			return categories;
@@ -74,12 +100,12 @@ private DataSource dataSource;
 		try {
 			myConn=dataSource.getConnection();
 			String sql="insert into category "
-					+ "(name)"
-					+ " values(?)";
+					+ "(name,image)"
+					+ " values(?,?)";
 			ps=myConn.prepareStatement(sql);
 			
 			ps.setString(1, category.getName());
-			
+			ps.setString(2, category.getBase64Image());
 			ps.execute();
 			
 			
@@ -105,8 +131,28 @@ private DataSource dataSource;
 			
 			if(rs.next()) {
 				String name=rs.getString("name");
+				Blob blob = rs.getBlob("image");
+                
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                 
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);                  
+                }
+                 
+                byte[] imageBytes = outputStream.toByteArray();
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                 
+                 
+                inputStream.close();
+                outputStream.close();
+                 
+				category.setCategoryId(categoryId);
+				category.setName(name);
+				category.setBase64Image(base64Image);
 				
-				category=new Category(categoryId,name);
 				
 			}else {
 				throw new Exception("CategoryId is invalid" + categoryId);
@@ -130,6 +176,7 @@ private DataSource dataSource;
 			stmt=myConn.prepareStatement(sql);
 			stmt.setString(1,category.getName());
 			stmt.setInt(2, category.getCategoryId());
+			
 			stmt.execute();
 			
 			

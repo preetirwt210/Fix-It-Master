@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maintenance.admin.BaseServlet;
-import com.maintenance.admin.services.UserServices;
+import com.maintenance.services.UserServices;
 
 
 @WebServlet("/admin/delete_user")
