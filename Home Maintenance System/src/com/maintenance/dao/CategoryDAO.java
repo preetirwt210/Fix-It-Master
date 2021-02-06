@@ -1,8 +1,10 @@
 package com.maintenance.dao;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,29 +44,11 @@ private DataSource dataSource;
 			while(myRs.next()) {
 				int categoryid=myRs.getInt("category_id");
 				String  categoryName=myRs.getString("name");
-				Blob blob = myRs.getBlob("image");
-                
-                InputStream inputStream = blob.getBinaryStream();
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                byte[] buffer = new byte[4096];
-                int bytesRead = -1;
-                 
-                while ((bytesRead = inputStream.read(buffer)) != -1) {
-                    outputStream.write(buffer, 0, bytesRead);                  
-                }
-                 
-                byte[] imageBytes = outputStream.toByteArray();
-                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-                 
-                inputStream.close();
-                outputStream.close();
-                 
-				
 				
 				Category cat=new Category();
 				cat.setCategoryId(categoryid);
 				cat.setName(categoryName);
-				cat.setBase64Image(base64Image);
+				
 				categories.add(cat);
 			}
 			return categories;

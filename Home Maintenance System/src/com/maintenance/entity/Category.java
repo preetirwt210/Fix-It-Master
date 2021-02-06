@@ -17,6 +17,15 @@ public class Category implements java.io.Serializable {
 	}
 
 
+
+	public Category(Integer categoryId, String name, String base64Image) {
+		super();
+		this.categoryId = categoryId;
+		this.name = name;
+		this.base64Image = base64Image;
+	}
+
+
 	public Category(Integer categoryId, String name) {
 		this.categoryId = categoryId;
 		this.name = name;
@@ -27,8 +36,6 @@ public class Category implements java.io.Serializable {
 	}
 
 	
-
-
 	public Category(String name, Set<Services> services) {
 		this.name = name;
 		this.services = services;

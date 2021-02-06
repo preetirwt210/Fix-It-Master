@@ -77,9 +77,10 @@ public class CategoryServices {
 	public void updateCategory() throws Exception {
 		Integer categoryId=Integer.parseInt(request.getParameter("categoryId"));
 		String name=request.getParameter("name");
+		String image=request.getParameter("image");
 		
 		
-		Category category=new Category(categoryId,name);
+		Category category=new Category(categoryId,name,image);
 		categoryDao.updateCategory(category);
 		String message="Category has been successfully updated";
 		listCategory(message);
