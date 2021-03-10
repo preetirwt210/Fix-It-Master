@@ -24,7 +24,7 @@ public class HomeServlet extends HttpServlet {
 		
 		String homepage="frontend/index.jsp";
 		RequestDispatcher dispatcher= request.getRequestDispatcher(homepage);
-		dispatcher.forward(request, response);
+		dispatcher.forward(request,response);
 	}
 
 }
