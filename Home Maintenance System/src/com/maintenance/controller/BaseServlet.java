@@ -1,4 +1,4 @@
-package com.maintenance.admin;
+package com.maintenance.controller;
 
 import java.io.IOException;
 

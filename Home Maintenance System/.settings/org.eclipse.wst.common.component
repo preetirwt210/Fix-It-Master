@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Home Maintenance System">
+        
+    <wb-module deploy-name="HomeMaintenanceSystem-0.0.1-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Home_Maintenance_System"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+                
         <property name="java-output-path" value="/Home Maintenance System/build/classes"/>
+        <property name="context-root" value="HomeMaintenanceSystem"/>
+            
     </wb-module>
+    
 </project-modules>

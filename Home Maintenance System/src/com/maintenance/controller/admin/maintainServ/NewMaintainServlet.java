@@ -1,4 +1,4 @@
-package com.maintenance.controller.admin.services;
+package com.maintenance.controller.admin.maintainServ;
 
 import java.io.IOException;
 
@@ -7,16 +7,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.maintenance.admin.BaseServlet;
+import com.maintenance.controller.BaseServlet;
 import com.maintenance.services.ServicesServ;
 
 
 @WebServlet("/admin/new_services")
-public class NewServicesServlet extends BaseServlet {
+public class NewMaintainServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public NewServicesServlet() {
+    public NewMaintainServlet() {
         super();
     }
 

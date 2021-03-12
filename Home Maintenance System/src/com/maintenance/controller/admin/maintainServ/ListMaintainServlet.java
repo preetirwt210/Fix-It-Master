@@ -1,4 +1,4 @@
-package com.maintenance.controller.admin.services;
+package com.maintenance.controller.admin.maintainServ;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -8,15 +8,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.maintenance.admin.BaseServlet;
+import com.maintenance.controller.BaseServlet;
 import com.maintenance.services.ServicesServ;
 
 @WebServlet("/admin/list_services")
-public class ListServicesServlet extends BaseServlet {
+public class ListMaintainServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     
-    public ListServicesServlet() {
+    public ListMaintainServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -1,4 +1,4 @@
-package com.maintenance.admin;
+package com.maintenance.controller.admin;
 
 import java.io.IOException;
 
@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.maintenance.controller.BaseServlet;
 
 @WebServlet("/admin/logout")
 public class AdminLogoutServlet extends BaseServlet {

@@ -1,10 +1,15 @@
 package com.maintenance.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="users")
 public class User {
 	
-	public User() {
-		
-	}
+	public User() {}
+	
+	
 	private int userId;
 	private String fullName;
 	private String email;

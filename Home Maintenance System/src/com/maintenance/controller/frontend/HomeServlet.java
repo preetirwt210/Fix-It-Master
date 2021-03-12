@@ -1,4 +1,4 @@
-package com.maintenance.frontend.home;
+package com.maintenance.controller.frontend;
 
 import java.io.IOException;
 

@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.maintenance.admin.BaseServlet;
+import com.maintenance.controller.BaseServlet;
 import com.maintenance.services.UserServices;
 
 @WebServlet("/admin/create_user")

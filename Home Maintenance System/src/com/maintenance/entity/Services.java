@@ -1,6 +1,5 @@
 package com.maintenance.entity;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,16 +20,9 @@ public class Services implements java.io.Serializable {
 	public Services() {
 	}
 	
-	public Services(Integer serviceId) {
-		super();
-		this.serviceId = serviceId;
-	}
-
-
-
 	public Services(Integer serviceId, Category category, String title, String description, byte[] image,
 			String base64Image, float price, Date lastUpdateTime, Set<Review> reviews,
-			Set<BookingDetail> bookingDetails,String categoryName) {
+			Set<BookingDetail> bookingDetails) {
 		super();
 		this.serviceId = serviceId;
 		this.category = category;
@@ -44,27 +36,10 @@ public class Services implements java.io.Serializable {
 		this.bookingDetails = bookingDetails;
 	}
 
-	public Services(Category category, String title,  String description,  byte[] image,
-			float price, Date lastUpdateTime) {
-		this.category = category;
-		this.title = title;
-		this.description = description;
-		this.image = image;
-		this.price = price;
-		this.lastUpdateTime = lastUpdateTime;
-	}
 
-	public Services(Category category, String title,  String description, byte[] image,
-			float price,  Date lastUpdateTime, Set<Review> reviews, Set<BookingDetail> bookingDetails) {
-		this.category = category;
-		this.title = title;
-		this.description = description;
-		this.image = image;
-		this.price = price;
-		this.lastUpdateTime = lastUpdateTime;
-		this.reviews = reviews;
-		this.bookingDetails = bookingDetails;
-	}
+
+
+
 
 	public Integer getServiceId() {
 		return serviceId;

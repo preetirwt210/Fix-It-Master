@@ -4,17 +4,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+
 public class Category implements java.io.Serializable {
 
 	private Integer categoryId;
 	private String name;
+	private byte[] image;
 	private String base64Image;
-	 
 	private Set<Services> services = new HashSet<Services>(0);
 
-	public Category() {
-		
-	}
+	public Category() {}
 
 
 
@@ -67,6 +66,14 @@ public class Category implements java.io.Serializable {
 		this.name = name;
 	}
 
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
 	public Set<Services> getServices() {
 		return services;
 	}
@@ -74,9 +81,6 @@ public class Category implements java.io.Serializable {
 	public void setServices(Set<Services> services) {
 		this.services = services;
 	}
-
-
-	
 
 	
 }
