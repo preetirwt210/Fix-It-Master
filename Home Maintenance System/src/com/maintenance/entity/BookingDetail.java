@@ -12,6 +12,14 @@ public class BookingDetail implements java.io.Serializable {
 	public BookingDetail() {
 	}
 
+	public BookingDetail(Services services, ServicesBooking servicesBooking, int quantity, float subtotal) {
+		super();
+		this.services = services;
+		this.servicesBooking = servicesBooking;
+		this.quantity = quantity;
+		this.subtotal = subtotal;
+	}
+
 	public BookingDetail(BookingDetailId id) {
 		this.id = id;
 	}

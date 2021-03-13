@@ -15,29 +15,31 @@ public class Category implements java.io.Serializable {
 
 	public Category() {}
 
-
-
-	public Category(Integer categoryId, String name, String base64Image) {
+	public Category(Integer categoryId, String name, byte[] image, String base64Image, Set<Services> services) {
 		super();
 		this.categoryId = categoryId;
 		this.name = name;
+		this.image = image;
 		this.base64Image = base64Image;
-	}
-
-
-	public Category(Integer categoryId, String name) {
-		this.categoryId = categoryId;
-		this.name = name;
-	}
-
-	public Category(String name) {
-		this.name = name;
-	}
-
-	
-	public Category(String name, Set<Services> services) {
-		this.name = name;
 		this.services = services;
+	}
+
+	public Category(String name, byte[] image, String base64Image, Set<Services> services) {
+		super();
+		this.name = name;
+		this.image = image;
+		this.base64Image = base64Image;
+		this.services = services;
+	}
+
+
+
+	public Category(Integer categoryId2, String name2, String image2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Category(int id, String name2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getBase64Image() {

@@ -8,6 +8,14 @@ public class BookingDetailId implements java.io.Serializable {
 	public BookingDetailId() {
 	}
 
+	
+	public BookingDetailId(Services services, ServicesBooking servicesBooking) {
+		super();
+		this.services = services;
+		this.servicesBooking = servicesBooking;
+	}
+
+
 	public Services getServices() {
 		return services;
 	}
