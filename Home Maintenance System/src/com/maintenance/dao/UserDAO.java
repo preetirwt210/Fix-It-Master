@@ -28,13 +28,7 @@ public class UserDAO {
 		ResultSet myRs=null;
 		
 		try {
-			myConn=dataSource.getConnection();
-		     
-			String sql="Select * from users order by full_name";
 			
-			myStmt=myConn.createStatement();
-			
-			myRs=myStmt.executeQuery(sql);
 			
 			while(myRs.next()) {
 				int userId=myRs.getInt("user_id");
