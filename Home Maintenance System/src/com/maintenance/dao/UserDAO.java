@@ -20,35 +20,7 @@ public class UserDAO {
 		dataSource=theDataSource;
 	}
 	
-	public List<User> listUsers() throws Exception{
-		List<User> listUsers=new ArrayList<>();
-		
-		Connection myConn=null;
-		Statement myStmt=null;
-		ResultSet myRs=null;
-		
-		try {
-			
-			
-			while(myRs.next()) {
-				int userId=myRs.getInt("user_id");
-				String fullName=myRs.getString("full_name");
-				String email=myRs.getString("email");
-				String password=myRs.getString("password");
-				
-				User tempUser=new User(userId,fullName,email,password);
-				
-				listUsers.add(tempUser);
-			}
-	        
-			return listUsers;
-		}
-		finally {
-			close(myConn,myStmt,myRs);
-		}
-		
-	}
-
+	
 	private void close(Connection myConn, Statement myStmt, ResultSet myRs) {
 		try {
 			if(myRs!=null) {
