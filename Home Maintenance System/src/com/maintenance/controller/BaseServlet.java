@@ -1,56 +1,33 @@
 package com.maintenance.controller;
 
-import java.io.IOException;
-
-import javax.annotation.Resource;
+/*import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
-
-import com.maintenance.dao.UserDAO;
 
 
-public abstract class BaseServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	 protected UserDAO userDao;
-		
-	    @Resource(name="jdbc/home_maintenance")
-	    protected DataSource dataSource;
-	    
-		public void init() throws ServletException {
-			
-			super.init();
-			try {
-				
-				userDao=new UserDAO(dataSource);
-				
-			}
-			catch(Exception e) {
-				throw new ServletException(e);
-			}
-		}
-    
-    @Override
-		public void destroy() {
-			super.destroy();
-		}
 
-	public BaseServlet() {
-        super();
-       
-    }
+	    public abstract class BaseServlet extends HttpServlet {
+	    	private static final long serialVersionUID = 1L;
+	    	
+	    	protected EntityManagerFactory entityManagerFactory;
+	    	protected EntityManager entityManager;
+	    	
+	    	@Override
+	    	public void init() throws ServletException {
+	    		entityManagerFactory= Persistence.createEntityManagerFactory("Home Maintenance System");
+	    		entityManager=entityManagerFactory.createEntityManager();
+	    	}
+	    	
+	    	@Override
+	    	public void destroy() {
+	    		entityManager.close();              
+	    		entityManagerFactory.close();
+	    	}
+	    	
+	    	
+	    	
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doPost(request,response);
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
-	}
-
-}
+	    }
+*/

@@ -12,7 +12,7 @@
 <jsp:directive.include file="header.jsp"/> 
 <hr>
 <div align="center">
-     Welcome, <c:out value="${sessionScope.useremail }"/> | <a href="logout">Logout</a><br/><br/>
+     Welcome,<!--  <c:out value="${sessionScope.useremail }"/> --> | <a href="logout">Logout</a><br/><br/>
       </div>
 <div align="center">
     <h1> Administrative Dashboard</h1>
