@@ -19,17 +19,9 @@ public class ListUserServlet extends HttpServlet  {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		UserServices userServices=new UserServices();
+		UserServices userServices=new UserServices(request, response);
+		userServices.listUsers();
 		
-			List<User> listUsers=userServices.listUsers();
-			
-			request.setAttribute("List_User", listUsers);
-			RequestDispatcher dispatcher=request.getRequestDispatcher("users_list.jsp");
-			dispatcher.forward(request, response);
-		
-
 	}
 
-
-	
 }

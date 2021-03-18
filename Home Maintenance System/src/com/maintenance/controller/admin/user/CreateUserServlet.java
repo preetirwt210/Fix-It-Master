@@ -17,11 +17,17 @@ public class CreateUserServlet extends HttpServlet{
     public CreateUserServlet() {
     }
 
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.doPost(req, resp);
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-			UserServices userServices=new UserServices();
+			UserServices userServices=new UserServices(request, response);
 			userServices.createUsers();
+			userServices.listUsers("New User Created Succesfully.");
 
 	}
 
