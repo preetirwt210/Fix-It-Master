@@ -12,7 +12,7 @@ import com.maintenance.services.UserServices;
 
 
 @WebServlet("/admin/delete_user")
-public class DeleteUserServlet extends BaseServlet {
+public class DeleteUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
     public DeleteUserServlet() {
@@ -21,7 +21,7 @@ public class DeleteUserServlet extends BaseServlet {
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserServices userDbUtil=new UserServices(dataSource,request,response);       
+		UserServices userDbUtil=new UserServices();       
 		try {
 			userDbUtil.deleteUser();
 	           }catch(Exception e) {
