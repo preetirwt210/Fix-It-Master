@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 import com.maintenance.entity.Category;
@@ -15,10 +16,10 @@ import com.maintenance.entity.Services;
 
 public class ServicesDAO {
 
-private DataSource dataSource;
+private Entity dataSource;
 	
-	public ServicesDAO(DataSource theDataSource) {
-		dataSource=theDataSource;
+	public ServicesDAO(EntityManager entityManager) {
+		dataSource=entityManager;
 	}
 
 	public List<Services> listServices() throws SQLException {

@@ -61,6 +61,26 @@ public class UserServices{
 		
 	}
 
+	public void deleteUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void editUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void searchUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
    /* public void searchUser()
 			throws Exception {
 		

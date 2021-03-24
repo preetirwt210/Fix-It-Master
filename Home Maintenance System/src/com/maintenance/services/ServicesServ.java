@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,16 +22,19 @@ public class ServicesServ {
 
 	 private ServicesDAO servicesDao;
 	 private CategoryDAO categoryDao;
+	 private EntityManagerFactory entityManagerFactory;
+     private EntityManager entityManager;
 	 private HttpServletRequest request;
 	 private HttpServletResponse response;
-	  private DataSource dataSource;
+	 
 	    
-	  public ServicesServ(DataSource dataSource,HttpServletRequest request,HttpServletResponse response) {
+	  public ServicesServ(HttpServletRequest request,HttpServletResponse response) {
 			
 			this.request=request;
 			this.response=response;
-			this.dataSource=dataSource;
-			servicesDao= new ServicesDAO(dataSource);
+			entityManagerFactory=Persistence.createEntityManagerFactory("Home Maintenance System");
+	    	  entityManager=entityManagerFactory.createEntityManager();
+			servicesDao= new ServicesDAO(entityManager);
 			
 		}
 	  
