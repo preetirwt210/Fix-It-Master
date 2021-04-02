@@ -29,11 +29,7 @@ public class EditUserServlet extends HttpServlet {
 		
 		UserServices services=new UserServices(request,response);
 		
-			try {
-				services.editUser();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			services.editUser();
 
 	}
 
