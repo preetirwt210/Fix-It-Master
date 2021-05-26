@@ -1,4 +1,4 @@
-package com.home.jdbc;
+/*package com.home.jdbc;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -55,4 +55,4 @@ public class TestServlet extends HttpServlet {
 	
 	}
 
-}
+}*/
