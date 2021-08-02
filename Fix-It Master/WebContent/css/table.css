@@ -1,0 +1,56 @@
+@charset "ISO-8859-1";
+table {   
+	border-collapse:collapse;
+	border-bottom:1px solid gray;
+	font-family: Tahoma,Verdana,Segoe,sans-serif;
+	width:72%;
+}
+ 
+th {
+	border-bottom:1px solid gray;
+	background:darkblue;
+	padding:10px;
+	color: white
+}
+
+tr {
+	border-top:1px solid gray;
+	text-align:center;	
+}
+.create_user,.create_category,.create_services,.create_customer,.create_review{
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 10px; 
+	font-size: 15px;
+	font-weight: bold;
+	width: 150px; 
+	padding: 5px 10px; 
+	margin-bottom: 15px;
+	background: #cccccc;
+	color:black;
+}
+.search_user,.search_category,.search_services,.search_customer {
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 10px; 
+	font-size: 15px;
+	font-weight: bold;
+	width: 100px; 
+	padding: 5px 10px; 
+	margin-bottom: 15px;
+	background: #cccccc;
+	color:black;
+}
+label {
+	font-size: 20px; 
+	width: 60px; 
+	text-align:10px;
+}
+.error{
+	font-style: italic;
+	color:red;
+	margin:5px;
+	
+}
+
+	
