@@ -7,7 +7,7 @@
       </div>
        <div id="headermenu" align="center" > 
              <div class="menu_item" align="left" >
-            <img src="images/logo.jpg" alt="logo" width="300" height="80"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/fixit.jpeg" alt="logo" width="300" height="100"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
               <div class="menu_item"> 
             <a href="${pageContext.request.contextPath }">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;

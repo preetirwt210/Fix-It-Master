@@ -11,12 +11,13 @@
 
 <jsp:directive.include file="header.jsp"/>
 <div>
-         <img id="background"  class="background"  src="images/header.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
-         <img id="background"  class="background"  src="images/header1.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
+         <img id="background"  class="background"  src="images/start.jpg" title ="Fix-It Master" alt="Image not available" width="1320px" height="250px"/>
+         <!--  <img id="background"  class="background"  src="images/header1.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
           <img id="background"  class="background"  src="images/header2.jpg" title ="Home-Maintenance-Services" alt="Image not available" width="1330px" height="400px"/>
-         
+  -->       
 </div>
-  
+  <br/>
+  <br/>
 <div align="center">
          <h1 align="center">Corporate Service PortFolio</h1><br/>
          All services
@@ -30,6 +31,7 @@
            df<br/>
            
 </div>
+<br/><br/><br/>
 <jsp:directive.include file="footer.jsp"/>
 </body>
 <script>
